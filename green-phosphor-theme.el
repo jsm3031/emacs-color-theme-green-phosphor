@@ -38,25 +38,31 @@
 ;;
 ;;; Code:
 
+(defvar green-phosphor-tab-font "Times New Roman")
 (deftheme green-phosphor)
 
 (custom-theme-set-faces
  'green-phosphor
 
- '(default          ((t (:foreground "LimeGreen" :background "#001100" :inherit nil))))
- '(fringe           ((t (:background "#001100"))))
+ '(default          ((t (:foreground "#00DF00" :background "#002300" :inherit nil))))
+ '(fringe           ((t (:background "#002300"))))
  '(cursor           ((t (:background "red"))))
- '(highlight        ((t (:foreground "black" :background "green"))))
+ '(highlight        ((t (:foreground "green" :background "dark green"))))
  '(region           ((t (:foreground "black" :background "LimeGreen"))))
  '(button           ((t (:inherit (link)))))
  '(link             ((t (:underline (:color foreground-color :style line) :foreground "green"))))
  '(link-visited     ((t (:foreground "green4" :underline (:color foreground-color :style line)))))
+ '(line-number      ((t (:background "#002300" :foreground "#006000"))))
+
  '(show-paren-match ((t (:foreground "black" :background "green"))))
 
  '(trailing-whitespace ((((class color) (background light)) (:background "DarkGreen"))
                         (((class color) (background dark)) (:background "DarkGreen"))
                         (t (:inverse-video t))))
-
+ ;; Tab-bar-mode
+ `(tab-bar ((t :family ,green-phosphor-tab-font :foreground "yellow" :background "#003300" :box nil))) ;; using box here ruins the text padding
+ '(tab-bar-tab ((t :inherit 'tab-bar :background "#004400" :box (:line-width (10 . 10) :color "#004400" :weight 'normal))))
+ '(tab-bar-tab-inactive ((t :inherit 'tab-bar :background "#003300" :box (:line-width (10 . 10) :color "#003300" :weight 'normal))))
  ;; font-lock
  '(font-lock-builtin-face              ((t (:foreground "DarkSeaGreen"))))
  '(font-lock-comment-delimiter-face    ((t (:foreground "DarkOliveGreen"))))
@@ -79,7 +85,7 @@
  '(powerline-active2   ((t (:foreground "PaleGreen" :background "#003300"))))
  '(powerline-inactive1 ((t (:foreground "gray70" :background "#002200"))))
  '(powerline-inactive2 ((t (:foreground "gray60" :background "#004400"))))
- '(mode-line           ((t (:foreground "black" :background "green" :box nil))))
+ '(mode-line           ((t (:foreground "green" :background "#005500" :box nil))))
 
  ;; git-gutter
  '(git-gutter+-added    ((t (:foreground "green4" :background "green4"))))
